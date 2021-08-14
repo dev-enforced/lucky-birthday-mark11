@@ -120,9 +120,10 @@ input{
     font-size: 1rem;
     cursor:pointer;
 }
-.lucky-div,.unlucky-div{
+.lucky-div , .unlucky-div{
     margin-top: 2vh;
     text-align: center;
+
     max-width: 700px;
     background-color: var(--sec-color);
     padding:2em;
@@ -142,11 +143,14 @@ input{
     font-style: inherit;
     color: var(--box-shadow-effect);
 }
-.lucky-div img,.unlucky-div img{
+.lucky-div img,
+.unlucky-div img {
+    margin: auto;
     margin-top: 1.5vh;
     width:50%;
     height: 50%;
 }
+
 .footer {
     background-color: var(--sec-color);
     padding: 1rem;

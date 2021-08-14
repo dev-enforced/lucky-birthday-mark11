@@ -1,12 +1,16 @@
 var privacyNotice=document.querySelector("#remove");
 var privacyDiv=document.querySelector(".main-privacy");
+
 var userName=document.querySelector("#name");
 var date=document.querySelector("#dob");
 var ln=document.querySelector("#luckynumber");
+
 var goodluck=document.querySelector(".lucky-div");
 var goodluckMsg=document.querySelector("#main-msg-luck");
 var badluck=document.querySelector(".unlucky-div");
 var badluckMsg=document.querySelector("#main-msg-unluck");
+var badluckImg=document.querySelector("#image-unluck");
+
 var submitIco=document.querySelector("#btn-submit");
 var form=document.querySelector("#main-form");
 var resetIco=document.querySelector("#btn-reset")
@@ -28,14 +32,22 @@ function luckyBirthdayHandler(event){
     for(let i=0;i<dobJoin.length;i++){
         sum+=Number(dobJoin[i]);
     }
-    if(sum%luckyNum===0){
-        goodluck.style.display="block";
-        goodluckMsg.innerText=`Yippee ${nameValue} your birthday is lucky.`
-        badluck.style.display="none";
+    if(luckyNum>0){
+        if(sum%luckyNum===0){
+            goodluck.style.display="block";
+            goodluckMsg.innerText=`Yippee ${nameValue} your birthday is lucky.`
+            badluck.style.display="none";
+        }else{
+            goodluck.style.display="none";
+            badluckMsg.innerText=`Sorry ${nameValue} your birthday isn't lucky.`
+            badluck.style.display="block";
+            badluckImg.style.display="block";
+        }
     }else{
         goodluck.style.display="none";
-        badluckMsg.innerText=`Sorry ${nameValue} your birthday isn't lucky.`
+        badluckMsg.innerText=`Sorry ${nameValue} please enter lucky number whose value is greater than 0.`
         badluck.style.display="block";
+        badluckImg.style.display="none";
     }
 }
 
