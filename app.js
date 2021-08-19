@@ -25,6 +25,10 @@ function luckyBirthdayHandler(event){
     var nameValue=userName.value;
     var dobValue=date.value;
     var luckyNum=ln.value;
+    luckyBdayChecker(nameValue,dobValue,luckyNum)
+}
+
+function luckyBdayChecker(nameValue,dobValue,luckyNum){
     var dobArr=dobValue.split("-");
     var dobJoin=dobArr.join("");
     console.log(dobJoin);
@@ -50,10 +54,9 @@ function luckyBirthdayHandler(event){
         badluckImg.style.display="none";
     }
 }
-
-
 form.addEventListener("submit",(e)=>luckyBirthdayHandler(e));
 resetIco.addEventListener("click",()=>{
+    privacyDiv.style.display="block";
     userName.value="";
     date.value="";
     ln.value="";
