@@ -39,11 +39,11 @@ function luckyBdayChecker(nameValue,dobValue,luckyNum){
     if(luckyNum>0){
         if(sum%luckyNum===0){
             goodluck.style.display="block";
-            goodluckMsg.innerText=`Yippee ${nameValue} your birthday is lucky.`
+            goodluckMsg.innerText=`Yippee ${nameValue} ${luckyNum} is lucky with your birthdate.`
             badluck.style.display="none";
         }else{
             goodluck.style.display="none";
-            badluckMsg.innerText=`Sorry ${nameValue} your birthday isn't lucky.`
+            badluckMsg.innerText=`Sorry ${nameValue} your birthday isn't lucky with ${luckyNum}.`
             badluck.style.display="block";
             badluckImg.style.display="block";
         }
