@@ -1,38 +1,38 @@
-var privacyNotice=document.querySelector("#remove");
-var privacyDiv=document.querySelector(".main-privacy");
+const privacyNotice=document.querySelector("#remove");
+const privacyDiv=document.querySelector(".main-privacy");
 
-var userName=document.querySelector("#name");
-var date=document.querySelector("#dob");
-var ln=document.querySelector("#luckynumber");
+const userName=document.querySelector("#name");
+const date=document.querySelector("#dob");
+const ln=document.querySelector("#luckynumber");
 
-var goodluck=document.querySelector(".lucky-div");
-var goodluckMsg=document.querySelector("#main-msg-luck");
-var badluck=document.querySelector(".unlucky-div");
-var badluckMsg=document.querySelector("#main-msg-unluck");
-var badluckImg=document.querySelector("#image-unluck");
+const goodluck=document.querySelector(".lucky-div");
+const goodluckMsg=document.querySelector("#main-msg-luck");
+const badluck=document.querySelector(".unlucky-div");
+const badluckMsg=document.querySelector("#main-msg-unluck");
+const badluckImg=document.querySelector("#image-unluck");
 
-var submitIco=document.querySelector("#btn-submit");
-var form=document.querySelector("#main-form");
-var resetIco=document.querySelector("#btn-reset")
+const submitIco=document.querySelector("#btn-submit");
+const form=document.querySelector("#main-form");
+const resetIco=document.querySelector("#btn-reset")
 
 
 privacyNotice.addEventListener("click",()=>{
     privacyDiv.style.display="none";
 })
 
-function luckyBirthdayHandler(event){
+const luckyBirthdayHandler=(event)=>{
     event.preventDefault();
-    var nameValue=userName.value;
-    var dobValue=date.value;
-    var luckyNum=ln.value;
+    let nameValue=userName.value;
+    let dobValue=date.value;
+    let luckyNum=ln.value;
     luckyBdayChecker(nameValue,dobValue,luckyNum)
 }
 
-function luckyBdayChecker(nameValue,dobValue,luckyNum){
-    var dobArr=dobValue.split("-");
-    var dobJoin=dobArr.join("");
+const luckyBdayChecker=(nameValue,dobValue,luckyNum)=>{
+    let dobArr=dobValue.split("-");
+    let dobJoin=dobArr.join("");
     console.log(dobJoin);
-    var sum=0;
+    let sum=0;
     for(let i=0;i<dobJoin.length;i++){
         sum+=Number(dobJoin[i]);
     }
